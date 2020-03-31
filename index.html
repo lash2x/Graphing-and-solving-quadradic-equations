@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>quadratic solver</title>
+    <a href="solving quadratics.html">to see how to solve this problem,click here</a>
+    <script>
+        
+    
+        // ax^2 + bx + c = 0;
+        
+        
+    </script>  
+</head>
+
+<body onload="getInput();" >
+    <div id="my_div"/>
+<script src="https://www.desmos.com/api/v1.4/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<div id="calculator" style="width: 600px; height: 400px;"></div>
+<script>
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt);
+  var a, b, c;
+  var myDiv;
+  function getInput() {
+            var valid;
+            
+            // validate a
+            while (!valid) {
+                a = prompt("Input 'a' (cannot equal zero) (ax\u00B2 + bx + c)", "1");
+                valid = a != 0 && !isNaN(a) && a != null && a != "";
+            }
+            
+            // validate b
+            valid = false;
+            while (!valid) {
+                b = prompt("Input 'b' (" + (a == 1 ? "" : a) + "x\u00B2 + bx + c)", "6");
+                valid = !isNaN(b) && b != null && b != "";
+            }
+            
+            // validate c
+            valid = false;
+            while (!valid) {
+                c = prompt("Input 'c' (" + (a == 1 ? "" : a) + "x\u00B2 + " + (b == 1 ? "" : b) + "x + c)", "5");
+                valid = !isNaN(c) && c != null && c != "";
+            
+            calculator.setExpression({ id: 'graph1', latex:  a + 'x^2' + '+' + b + 'x' +'+' + c });
+            	}
+            
+            // show equation
+            myDiv = document.getElementById("my_div");
+            
+            }
+
+  
+</script>
+
+</body>
+
+</html>
